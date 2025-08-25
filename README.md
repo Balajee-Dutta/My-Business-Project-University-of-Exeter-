@@ -19,6 +19,11 @@ A comprehensive HR analytics platform that transforms traditional HR management 
 
 ---
 
+<a id="walkthrough-videos"></a>
+## 🎥 **Walkthrough Videos**
+> **Disclaimer:** Please ignore the video quality — these demos were super-compressed due to GitHub’s 25 MB per-file video limit.
+
+
 <a id="toc"></a>
 ## 📑 **Table of Contents**
 <a href="#overview">Overview</a> • <a href="#key-features">Key Features</a> • <a href="#performance-metrics">Performance Metrics</a> • <a href="#installation">Installation</a> • <a href="#usage">Usage</a> • <a href="#file-structure">File Structure</a> • <a href="#technical-architecture">Technical Architecture</a> • <a href="#walkthrough-videos">Walkthrough Videos</a> • <a href="#results--evaluation">Results &amp; Evaluation</a> • <a href="#contributing">Contributing</a> • <a href="#license">License</a> • <a href="#acknowledgments">Acknowledgments</a> • <a href="#contact--support">Contact &amp; Support</a>
