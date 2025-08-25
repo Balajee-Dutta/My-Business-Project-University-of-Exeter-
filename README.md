@@ -3,7 +3,7 @@ Revolutionary Workforce Analytics with Generative AI
 
 A comprehensive HR analytics platform that transforms traditional HR management through advanced AI, predictive modeling, and intelligent decision support systems.
 
-<p align="center"> <img src="https://img.shields.io/badge/Python-3.8+-blue.svg"> <img src="https://img.shields.io/badge/Streamlit-1.28+-red.svg"> <img src="https://img.shields.io/badge/OpenAI-GPT--4o--mini-green.svg"> <img src="https://img.shields.io/badge/License-MIT-yellow.svg"><br> <img src="https://img.shields.io/github/stars/your-username/ai-hr-intelligence-platform?style=social"> <img src="https://img.shields.io/github/forks/your-username/ai-hr-intelligence-platform?style=social"> <img src="https://img.shields.io/github/contributors/your-username/ai-hr-intelligence-platform"> <img src="https://img.shields.io/badge/Datasets-4-green"> </p>
+<p align="center"> <img src="https://img.shields.io/badge/Python-3.8+-blue.svg" /> <img src="https://img.shields.io/badge/Streamlit-1.28+-red.svg" /> <img src="https://img.shields.io/badge/OpenAI-GPT--4o--mini-green.svg" /> <img src="https://img.shields.io/badge/License-MIT-yellow.svg" /> <br /> <img src="https://img.shields.io/github/stars/your-username/ai-hr-intelligence-platform?style=social" /> <img src="https://img.shields.io/github/forks/your-username/ai-hr-intelligence-platform?style=social" /> <img src="https://img.shields.io/github/contributors/your-username/ai-hr-intelligence-platform" /> <img src="https://img.shields.io/badge/Datasets-4-green" /> </p>
 📑 Table of Contents
 
 Overview
@@ -37,8 +37,11 @@ Contact & Support
 The HR Intelligence Platform leverages cutting-edge AI technologies to revolutionize HR analytics, delivering:
 
 ✅ 92.3% accuracy in attrition prediction
+
 ✅ 86.6% reduction in manual reporting effort
+
 ✅ 96% Top-5 accuracy in resume-job matching
+
 ✅ Real-time insights with natural language explanations
 
 🧩 Built With Modern AI Stack
@@ -195,6 +198,7 @@ flowchart TD
 🎥 Walkthrough Videos
 
 📌 Platform Demo → My HR Intelligence platform walkthrough.mp4
+
 📌 Code Deep Dive → My code- Walkthrough.mp4
 
 📈 Results & Evaluation
@@ -236,7 +240,15 @@ Accessibility-first design
 
 Contribution Areas:
 
-Model accuracy, HRIS integration, multilingual support, new visualizations, mobile design
+Model accuracy
+
+HRIS integration
+
+Multilingual support
+
+New visualizations
+
+Mobile design
 
 📜 License
 
@@ -284,4 +296,3 @@ Issues: 🛠️ 1–3 business days
 
 Collab: 📅 1 week
 
-<p align="center"> <b>🌍 Built for the future of HR</b><br> <i>Transforming HR from reactive administration to proactive strategic partnership through ethical AI innovation.</i> </p>
