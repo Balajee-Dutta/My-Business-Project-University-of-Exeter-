@@ -1,0 +1,127 @@
+emp_id,age,gender,ethnicity,education_level,marital_status,department,business_unit,job_title,job_level,location,tenure_months,employment_type,performance_rating,engagement_score,risk_of_exit_score,high_potential_flag,current_salary,base_salary,bonus_eligible,bonus_pct,equity_grant,equity_pct,training_count,promotion_count,succession_plan_status,aihr_certified,leave_days_24m,leave_events_24m,approval_ratio,attrition_flag,veteran_status,disability_status,fte
+EMP001,45,Male,Asian,Master,Married,HR,Corporate,HR Director,4,New York,96,Full-time,4.5,4.8,0.63,TRUE,145000,130000,TRUE,0.25,TRUE,0.03,8,3,Ready Now,TRUE,12,2,0.95,0,No,No,1
+EMP002,28,Female,White,Bachelor,Single,Sales,Revenue,Sales Representative,2,Chicago,18,Full-time,3.2,3,0.72,FALSE,52000,50000,TRUE,0.08,FALSE,0,2,0,Not Ready,FALSE,28,5,0.65,1,No,No,1
+EMP003,35,Male,Hispanic,Bachelor,Married,IT,Technology,Senior Developer,3,San Francisco,60,Full-time,4.2,4.5,0.61,TRUE,115000,105000,TRUE,0.18,TRUE,0.02,6,2,Ready in 1 Year,TRUE,8,2,0.88,0,No,No,1
+EMP004,42,Female,Black,Master,Divorced,Finance,Corporate,Finance Manager,3,Boston,84,Full-time,4,4.2,0.55,TRUE,98000,90000,TRUE,0.15,TRUE,0.01,5,2,Ready Now,FALSE,15,3,0.82,0,Yes,No,1
+EMP005,31,Male,White,Bachelor,Single,Customer Service,Operations,Support Specialist,2,Miami,24,Full-time,2.8,2.5,0.78,FALSE,45000,43000,FALSE,0,FALSE,0,1,0,Not Ready,FALSE,35,6,0.58,1,No,Yes,1
+EMP006,39,Female,Asian,PhD,Married,R&D,Innovation,Research Scientist,4,Seattle,72,Full-time,4.6,4.7,0.55,TRUE,135000,125000,TRUE,0.22,TRUE,0.04,7,2,Ready Now,TRUE,10,2,0.92,0,No,No,1
+EMP007,26,Male,Hispanic,Bachelor,Single,Sales,Revenue,Junior Sales,1,Dallas,12,Full-time,3.6,2.8,0.81,FALSE,42000,40000,TRUE,0.05,FALSE,0,1,0,Not Ready,FALSE,32,5,0.55,1,No,No,1
+EMP008,48,Female,White,Master,Married,HR,Corporate,HR Business Partner,3,Atlanta,108,Full-time,4.3,4.4,0.55,TRUE,92000,85000,TRUE,0.15,TRUE,0.01,6,3,Ready in 1 Year,TRUE,14,3,0.85,0,No,No,1
+EMP009,33,Male,Black,Bachelor,Married,Operations,Operations,Operations Manager,3,Phoenix,48,Full-time,3.8,3.9,0.35,FALSE,78000,72000,TRUE,0.12,FALSE,0,4,1,Ready in 2 Years,FALSE,18,3,0.75,0,Yes,No,1
+EMP010,29,Female,Asian,Master,Single,Marketing,Revenue,Marketing Analyst,2,Denver,30,Full-time,3.6,3.3,0.45,FALSE,62000,58000,TRUE,0.08,FALSE,0,3,1,Not Ready,FALSE,22,4,0.7,1,No,No,1
+EMP011,41,Male,White,Bachelor,Divorced,IT,Technology,IT Manager,3,Portland,90,Full-time,4.1,4.3,0.55,TRUE,105000,95000,TRUE,0.18,TRUE,0.02,5,2,Ready Now,FALSE,16,3,0.8,0,No,Yes,1
+EMP012,27,Female,Hispanic,Bachelor,Single,Customer Service,Operations,Service Rep,1,Houston,15,Full-time,2.7,2.4,0.85,FALSE,38000,37000,FALSE,0,FALSE,0,0,0,Not Ready,FALSE,38,7,0.52,1,No,No,1
+EMP013,36,Male,Asian,Master,Married,Finance,Corporate,Financial Analyst,2,Minneapolis,66,Full-time,4,4.1,0.55,TRUE,85000,78000,TRUE,0.12,TRUE,0.01,4,1,Ready in 1 Year,TRUE,12,2,0.83,0,No,No,1
+EMP014,44,Female,Black,Bachelor,Married,HR,Corporate,HR Specialist,2,Detroit,96,Full-time,3.9,4,0.32,FALSE,72000,68000,TRUE,0.1,FALSE,0,4,2,Ready in 2 Years,TRUE,14,3,0.78,0,No,No,1
+EMP015,30,Male,White,Master,Single,Sales,Revenue,Sales Manager,3,Tampa,36,Full-time,3.4,3.1,0.62,FALSE,68000,63000,TRUE,0.1,FALSE,0,2,1,Not Ready,FALSE,26,5,0.62,1,Yes,No,1
+EMP016,38,Female,Hispanic,PhD,Married,R&D,Innovation,Senior Researcher,4,San Diego,78,Full-time,4.5,4.6,0.55,TRUE,128000,118000,TRUE,0.2,TRUE,0.03,6,2,Ready Now,TRUE,11,2,0.9,0,No,No,1
+EMP017,25,Male,Asian,Bachelor,Single,IT,Technology,Junior Developer,1,Austin,9,Full-time,3,2.9,0.75,FALSE,48000,46000,FALSE,0,FALSE,0,1,0,Not Ready,FALSE,30,5,0.6,1,No,No,1
+EMP018,47,Female,White,Master,Married,Operations,Operations,Operations Director,4,Nashville,114,Full-time,4.4,4.5,0.2,TRUE,125000,115000,TRUE,0.2,TRUE,0.02,7,3,Ready Now,FALSE,13,3,0.87,0,No,Yes,1
+EMP019,32,Male,Black,Bachelor,Single,Marketing,Revenue,Marketing Specialist,2,Charlotte,42,Full-time,3.3,3.2,0.55,FALSE,58000,55000,TRUE,0.08,FALSE,0,2,0,Not Ready,FALSE,24,4,0.65,1,No,No,1
+EMP020,40,Female,Asian,Master,Divorced,Finance,Corporate,Senior Analyst,3,San Jose,72,Full-time,4.2,4.3,0.6,TRUE,95000,88000,TRUE,0.15,TRUE,0.01,5,2,Ready in 1 Year,TRUE,10,2,0.85,0,Yes,No,1
+EMP021,28,Male,Hispanic,Bachelor,Single,Customer Service,Operations,Team Lead,2,Milwaukee,20,Full-time,3.6,2.6,0.8,FALSE,46000,44000,FALSE,0,FALSE,0,1,0,Not Ready,FALSE,33,6,0.54,1,No,No,1
+EMP022,37,Female,White,Master,Married,IT,Technology,Tech Lead,3,Kansas City,60,Full-time,4.1,4.2,0.54,TRUE,102000,94000,TRUE,0.16,TRUE,0.02,5,2,Ready in 1 Year,FALSE,12,2,0.82,0,No,No,1
+EMP023,43,Male,Asian,Bachelor,Married,HR,Corporate,Talent Manager,3,Las Vegas,90,Full-time,4,4.1,0.54,TRUE,88000,82000,TRUE,0.12,FALSE,0,5,2,Ready Now,TRUE,15,3,0.8,0,No,No,1
+EMP024,26,Female,Black,Bachelor,Single,Sales,Revenue,Inside Sales,1,Orlando,14,Full-time,2.8,2.5,0.82,FALSE,40000,38000,TRUE,0.05,FALSE,0,0,0,Not Ready,FALSE,36,6,0.5,1,No,Yes,1
+EMP025,34,Male,White,PhD,Married,R&D,Innovation,Principal Scientist,4,Baltimore,66,Full-time,4.7,4.8,0.1,TRUE,142000,130000,TRUE,0.25,TRUE,0.04,8,2,Ready Now,TRUE,9,2,0.94,0,No,No,1
+EMP026,31,Female,Hispanic,Bachelor,Single,Marketing,Revenue,Digital Marketer,2,St. Louis,28,Full-time,3.2,3,0.65,FALSE,56000,53000,TRUE,0.07,FALSE,0,2,0,Not Ready,FALSE,27,5,0.61,0,No,No,1
+EMP027,46,Male,Asian,Master,Divorced,Operations,Operations,Supply Chain Mgr,3,Columbus,102,Full-time,4.2,4.3,0.24,TRUE,96000,88000,TRUE,0.14,TRUE,0.01,6,3,Ready in 1 Year,FALSE,14,3,0.83,0,Yes,No,1
+EMP028,29,Female,White,Bachelor,Single,Customer Service,Operations,Service Agent,1,Cincinnati,18,Full-time,3.6,2.3,0.88,FALSE,36000,35000,FALSE,0,FALSE,0,0,0,Not Ready,FALSE,40,7,0.48,1,No,No,1
+EMP029,39,Male,Black,Master,Married,Finance,Corporate,Controller,4,Indianapolis,84,Full-time,4.3,4.4,0.21,TRUE,115000,105000,TRUE,0.18,TRUE,0.02,6,2,Ready Now,FALSE,11,2,0.86,0,No,Yes,1
+EMP030,35,Female,Asian,Bachelor,Married,IT,Technology,Systems Analyst,2,Raleigh,54,Full-time,3.8,3.9,0.34,FALSE,75000,70000,TRUE,0.1,FALSE,0,3,1,Ready in 2 Years,TRUE,17,3,0.76,0,No,No,1
+EMP031,27,Male,Hispanic,Bachelor,Single,Sales,Revenue,Sales Associate,1,Richmond,16,Full-time,2.7,2.4,0.84,FALSE,41000,39000,TRUE,0.04,FALSE,0,0,0,Not Ready,FALSE,35,6,0.51,1,No,No,1
+EMP032,42,Female,White,Master,Married,HR,Corporate,Comp & Benefits Mgr,3,Sacramento,96,Full-time,4.1,4.2,0.25,TRUE,94000,86000,TRUE,0.14,TRUE,0.01,5,2,Ready in 1 Year,TRUE,13,3,0.81,0,No,No,1
+EMP033,30,Male,Asian,Master,Single,R&D,Innovation,Research Associate,2,Pittsburgh,24,Full-time,3.6,3.4,0.48,FALSE,68000,64000,TRUE,0.08,FALSE,0,2,0,Not Ready,FALSE,23,4,0.68,1,No,No,1
+EMP034,38,Female,Black,Bachelor,Divorced,Operations,Operations,Process Manager,3,Memphis,66,Full-time,3.9,4,0.31,TRUE,82000,76000,TRUE,0.12,FALSE,0,4,1,Ready in 1 Year,FALSE,16,3,0.77,0,Yes,No,1
+EMP035,33,Male,White,Bachelor,Married,Marketing,Revenue,Brand Manager,3,Buffalo,48,Full-time,3.5,3.5,0.42,FALSE,72000,67000,TRUE,0.09,FALSE,0,3,1,Ready in 2 Years,FALSE,20,4,0.71,1,No,Yes,1
+EMP036,45,Female,Hispanic,Master,Married,Finance,Corporate,VP Finance,5,Salt Lake City,108,Full-time,4.6,4.7,0.12,TRUE,165000,150000,TRUE,0.3,TRUE,0.05,8,3,Ready Now,TRUE,10,2,0.93,0,No,No,1
+EMP037,26,Male,Asian,Bachelor,Single,IT,Technology,Support Engineer,1,Oklahoma City,10,Full-time,2.9,2.7,0.79,FALSE,44000,42000,FALSE,0,FALSE,0,1,0,Not Ready,FALSE,31,5,0.57,1,No,No,1
+EMP038,41,Female,White,PhD,Married,R&D,Innovation,Research Director,5,Louisville,96,Full-time,4.8,4.9,0.08,TRUE,155000,140000,TRUE,0.28,TRUE,0.05,9,3,Ready Now,TRUE,8,2,0.95,0,No,No,1
+EMP039,32,Male,Black,Bachelor,Single,Customer Service,Operations,Quality Analyst,2,Birmingham,36,Full-time,3.1,2.9,0.68,FALSE,50000,48000,FALSE,0,FALSE,0,1,0,Not Ready,FALSE,29,5,0.59,1,Yes,No,1
+EMP040,36,Female,Asian,Master,Married,IT,Technology,Data Scientist,3,Rochester,60,Full-time,4.3,4.4,0.23,TRUE,108000,98000,TRUE,0.16,TRUE,0.02,5,2,Ready in 1 Year,TRUE,11,2,0.84,0,No,No,1
+EMP041,29,Male,Hispanic,Bachelor,Single,Sales,Revenue,Territory Rep,2,Spokane,22,Full-time,3,2.7,0.73,FALSE,48000,46000,TRUE,0.06,FALSE,0,1,0,Not Ready,FALSE,30,5,0.58,1,No,Yes,1
+EMP042,44,Female,White,Master,Divorced,HR,Corporate,Learning Director,4,Tucson,102,Full-time,4.4,4.5,0.19,TRUE,118000,108000,TRUE,0.18,TRUE,0.02,7,3,Ready Now,TRUE,12,2,0.88,0,No,No,1
+EMP043,31,Male,Asian,Bachelor,Single,Marketing,Revenue,Content Creator,2,Fresno,26,Full-time,3.3,3.1,0.6,FALSE,54000,51000,TRUE,0.07,FALSE,0,2,0,Not Ready,FALSE,25,4,0.63,0,No,No,1
+EMP044,40,Female,Black,Master,Married,Operations,Operations,Logistics Manager,3,Mesa,72,Full-time,4,4.1,0.29,TRUE,86000,80000,TRUE,0.13,TRUE,0.01,5,2,Ready in 1 Year,FALSE,15,3,0.79,0,No,No,1
+EMP045,34,Male,White,Bachelor,Married,Finance,Corporate,Budget Analyst,2,Long Beach,48,Full-time,3.7,3.8,0.36,FALSE,70000,65000,TRUE,0.09,FALSE,0,3,1,Ready in 2 Years,FALSE,19,3,0.74,1,Yes,No,1
+EMP046,28,Female,Hispanic,Bachelor,Single,Customer Service,Operations,Call Center Rep,1,Virginia Beach,17,Full-time,2.5,2.2,0.9,FALSE,34000,33000,FALSE,0,FALSE,0,0,0,Not Ready,FALSE,42,8,0.45,1,No,No,1
+EMP047,37,Male,Asian,PhD,Married,R&D,Innovation,Staff Scientist,4,Oakland,66,Full-time,4.5,4.6,0.16,TRUE,132000,120000,TRUE,0.22,TRUE,0.03,6,2,Ready Now,TRUE,10,2,0.91,0,No,Yes,1
+EMP048,43,Female,White,Master,Married,IT,Technology,Infrastructure Mgr,3,Miami,90,Full-time,4.1,4.2,0.27,TRUE,98000,90000,TRUE,0.14,TRUE,0.01,5,2,Ready in 1 Year,FALSE,14,3,0.81,0,No,No,1
+EMP049,30,Male,Black,Bachelor,Single,Sales,Revenue,Account Executive,2,Arlington,24,Full-time,3.1,2.8,0.7,FALSE,52000,50000,TRUE,0.06,FALSE,0,1,0,Not Ready,FALSE,28,5,0.6,1,No,No,1
+EMP050,35,Female,Asian,Master,Married,HR,Corporate,Recruiter,2,New Orleans,42,Full-time,3.8,3.9,0.33,FALSE,68000,63000,TRUE,0.1,FALSE,0,3,1,Ready in 2 Years,TRUE,17,3,0.75,0,No,No,1
+EMP051,27,Male,Hispanic,Bachelor,Single,IT,Technology,Network Admin,2,Cleveland,19,Full-time,3.2,3,0.66,FALSE,55000,52000,TRUE,0.07,FALSE,0,2,0,Not Ready,FALSE,26,4,0.62,1,Yes,No,1
+EMP052,46,Female,White,Master,Divorced,Finance,Corporate,Treasury Manager,4,Wichita,108,Full-time,4.3,4.4,0.22,TRUE,112000,102000,TRUE,0.17,TRUE,0.02,6,3,Ready Now,FALSE,13,3,0.85,0,No,No,1
+EMP053,32,Male,Asian,Bachelor,Single,Marketing,Revenue,SEO Specialist,2,Bakersfield,30,Full-time,3.4,3.2,0.58,FALSE,58000,55000,TRUE,0.07,FALSE,0,2,0,Not Ready,FALSE,24,4,0.64,1,No,Yes,1
+EMP054,41,Female,Black,Master,Married,Operations,Operations,Quality Director,4,Tulsa,96,Full-time,4.2,4.3,0.24,TRUE,105000,95000,TRUE,0.15,TRUE,0.02,6,2,Ready in 1 Year,TRUE,12,2,0.83,0,No,No,1
+EMP055,29,Male,White,Bachelor,Single,Customer Service,Operations,Support Lead,2,Aurora,21,Full-time,2.8,2.5,0.77,FALSE,47000,45000,FALSE,0,FALSE,0,1,0,Not Ready,FALSE,32,6,0.56,1,No,No,1
+EMP056,38,Female,Hispanic,PhD,Married,R&D,Innovation,Lab Manager,3,Anaheim,72,Full-time,4.4,4.5,0.2,TRUE,115000,105000,TRUE,0.18,TRUE,0.02,6,2,Ready Now,TRUE,11,2,0.87,0,No,No,1
+EMP057,26,Male,Asian,Bachelor,Single,Sales,Revenue,Sales Dev Rep,1,Santa Ana,13,Full-time,3.5,2.3,0.86,FALSE,39000,37000,TRUE,0.04,FALSE,0,0,0,Not Ready,FALSE,37,6,0.49,1,No,No,1
+EMP058,45,Female,White,Master,Married,HR,Corporate,Chief People Officer,5,Riverside,120,Full-time,4.7,4.8,0.1,TRUE,175000,160000,TRUE,0.32,TRUE,0.06,9,4,Ready Now,TRUE,9,2,0.94,0,Yes,No,1
+EMP059,33,Male,Black,Bachelor,Married,IT,Technology,Security Analyst,2,Corpus Christi,40,Full-time,3.6,3.7,0.38,FALSE,72000,67000,TRUE,0.09,FALSE,0,3,1,Ready in 2 Years,FALSE,18,3,0.72,0,No,Yes,1
+EMP060,39,Female,Asian,Master,Divorced,Finance,Corporate,Risk Manager,3,Lexington,78,Full-time,4,4.1,0.3,TRUE,92000,85000,TRUE,0.13,TRUE,0.01,5,2,Ready in 1 Year,TRUE,14,3,0.8,0,No,No,1
+EMP061,28,Male,Hispanic,Bachelor,Single,Marketing,Revenue,Social Media Mgr,2,Stockton,20,Full-time,3.1,2.8,0.71,FALSE,51000,49000,TRUE,0.06,FALSE,0,1,0,Not Ready,FALSE,29,5,0.59,0,No,No,1
+EMP062,42,Female,White,Master,Married,Operations,Operations,Procurement Mgr,3,Cincinnati,84,Full-time,4.1,4.2,0.26,TRUE,94000,86000,TRUE,0.14,TRUE,0.01,5,2,Ready in 1 Year,FALSE,13,3,0.82,0,No,No,1
+EMP063,31,Male,Asian,Bachelor,Single,Customer Service,Operations,Escalation Spec,2,St. Paul,25,Full-time,2.7,2.4,0.83,FALSE,45000,43000,FALSE,0,FALSE,0,0,0,Not Ready,FALSE,34,6,0.53,1,Yes,No,1
+EMP064,36,Female,Black,Master,Married,IT,Technology,Cloud Architect,3,Newark,60,Full-time,4.2,4.3,0.25,TRUE,110000,100000,TRUE,0.16,TRUE,0.02,5,2,Ready Now,TRUE,12,2,0.84,0,No,No,1
+EMP065,34,Male,White,Bachelor,Single,Sales,Revenue,Regional Manager,3,Toledo,48,Full-time,4.5,3.3,0.52,FALSE,65000,60000,TRUE,0.08,FALSE,0,2,1,Not Ready,FALSE,23,4,0.66,0,No,Yes,1
+EMP066,40,Female,Hispanic,PhD,Married,R&D,Innovation,Innovation Lead,4,Greensboro,84,Full-time,4.6,4.7,0.14,TRUE,138000,125000,TRUE,0.24,TRUE,0.04,7,2,Ready Now,TRUE,10,2,0.92,0,No,No,1
+EMP067,27,Male,Asian,Bachelor,Single,IT,Technology,Database Admin,2,Plano,18,Full-time,3,2.7,0.74,FALSE,53000,50000,TRUE,0.06,FALSE,0,1,0,Not Ready,FALSE,31,5,0.57,1,No,No,1
+EMP068,44,Female,White,Master,Divorced,HR,Corporate,Benefits Director,4,Lincoln,96,Full-time,4.3,4.4,0.21,TRUE,108000,98000,TRUE,0.16,TRUE,0.02,6,3,Ready Now,TRUE,11,2,0.86,0,No,No,1
+EMP069,32,Male,Black,Bachelor,Single,Marketing,Revenue,PPC Specialist,2,Durham,28,Full-time,3.2,2.9,0.67,FALSE,56000,53000,TRUE,0.07,FALSE,0,2,0,Not Ready,FALSE,27,5,0.61,1,No,No,1
+EMP070,37,Female,Asian,Master,Married,Finance,Corporate,Audit Manager,3,Jersey City,66,Full-time,4,4.1,0.31,TRUE,88000,82000,TRUE,0.13,TRUE,0.01,5,2,Ready in 1 Year,FALSE,15,3,0.79,0,Yes,Yes,1
+EMP071,30,Male,Hispanic,Bachelor,Single,Customer Service,Operations,Chat Support,1,Chandler,22,Full-time,3.5,2.3,0.87,FALSE,37000,36000,FALSE,0,FALSE,0,0,0,Not Ready,FALSE,39,7,0.47,1,No,No,1
+EMP072,43,Female,White,Master,Married,Operations,Operations,Warehouse Mgr,3,Madison,90,Full-time,4.1,4.2,0.28,TRUE,90000,83000,TRUE,0.13,TRUE,0.01,5,2,Ready in 1 Year,FALSE,14,3,0.81,0,No,No,1
+EMP073,35,Male,Asian,PhD,Married,R&D,Innovation,Product Scientist,3,Lubbock,60,Full-time,4.4,4.5,0.19,TRUE,118000,108000,TRUE,0.18,TRUE,0.03,6,2,Ready Now,TRUE,11,2,0.88,0,No,No,1
+EMP074,28,Female,Black,Bachelor,Single,Sales,Revenue,Field Sales,2,Laredo,19,Full-time,3.5,2.6,0.76,FALSE,46000,44000,TRUE,0.05,FALSE,0,1,0,Not Ready,FALSE,33,6,0.55,1,No,Yes,1
+EMP075,41,Male,White,Master,Married,IT,Technology,DevOps Manager,3,Reno,78,Full-time,4.2,4.3,0.24,TRUE,105000,95000,TRUE,0.15,TRUE,0.02,5,2,Ready in 1 Year,TRUE,12,2,0.83,0,No,No,1
+EMP076,33,Female,Hispanic,Bachelor,Single,HR,Corporate,Talent Specialist,2,Paradise,36,Full-time,3.5,3.6,0.41,FALSE,62000,58000,TRUE,0.09,FALSE,0,3,1,Ready in 2 Years,FALSE,21,4,0.69,1,Yes,No,1
+EMP077,39,Male,Asian,Master,Divorced,Finance,Corporate,Tax Manager,3,Arlington,72,Full-time,4,4.1,0.29,TRUE,95000,88000,TRUE,0.14,TRUE,0.01,5,2,Ready in 1 Year,TRUE,14,3,0.8,0,No,No,1
+EMP078,26,Female,White,Bachelor,Single,Marketing,Revenue,Event Coordinator,1,Irving,14,Full-time,2.8,2.5,0.81,FALSE,42000,40000,FALSE,0,FALSE,0,0,0,Not Ready,FALSE,35,6,0.52,1,No,No,1
+EMP079,45,Male,Black,PhD,Married,R&D,Innovation,VP Research,5,Garland,108,Full-time,4.7,4.8,0.11,TRUE,162000,148000,TRUE,0.28,TRUE,0.05,8,3,Ready Now,TRUE,9,2,0.93,0,No,Yes,1
+EMP080,31,Female,Asian,Bachelor,Single,Customer Service,Operations,Training Coord,2,Hialeah,27,Full-time,3.1,2.8,0.69,FALSE,49000,47000,FALSE,0,FALSE,0,1,0,Not Ready,FALSE,30,5,0.58,1,No,No,1
+EMP081,38,Male,Hispanic,Master,Married,Operations,Operations,Distribution Mgr,3,Chesapeake,66,Full-time,4,4.1,0.54,TRUE,84000,78000,TRUE,0.12,FALSE,0,4,1,Ready in 1 Year,FALSE,16,3,0.78,1,No,No,1
+EMP082,34,Female,White,Bachelor,Married,IT,Technology,Mobile Developer,2,Baton Rouge,42,Full-time,3.7,3.8,0.37,FALSE,76000,71000,TRUE,0.1,FALSE,0,3,1,Ready in 2 Years,TRUE,18,3,0.73,0,No,No,1
+EMP083,29,Male,Asian,Master,Single,Sales,Revenue,Partner Manager,2,Norfolk,23,Full-time,3,2.7,0.72,FALSE,54000,51000,TRUE,0.06,FALSE,0,1,0,Not Ready,FALSE,31,5,0.57,1,No,No,1
+EMP084,42,Female,Black,Master,Divorced,HR,Corporate,Org Dev Manager,3,Scottsdale,84,Full-time,4.2,4.3,0.63,TRUE,96000,88000,TRUE,0.14,TRUE,0.01,5,2,Ready Now,TRUE,13,3,0.82,1,Yes,No,1
+EMP085,36,Male,White,Bachelor,Married,Finance,Corporate,Investment Analyst,3,Boise,60,Full-time,3.9,4,0.33,TRUE,82000,76000,TRUE,0.11,FALSE,0,4,1,Ready in 1 Year,FALSE,17,3,0.76,0,No,Yes,1
+EMP086,27,Female,Hispanic,Bachelor,Single,IT,Technology,QA Tester,1,Tacoma,15,Full-time,2.7,2.4,0.85,FALSE,41000,39000,FALSE,0,FALSE,0,0,0,Not Ready,FALSE,36,6,0.5,1,No,No,1
+EMP087,48,Male,Asian,PhD,Married,R&D,Innovation,Chief Scientist,5,Fontana,114,Full-time,4.8,4.9,0.09,TRUE,168000,152000,TRUE,0.3,TRUE,0.06,9,4,Ready Now,TRUE,8,2,0.95,0,No,No,1
+EMP088,32,Female,White,Bachelor,Single,Marketing,Revenue,Email Marketer,2,Moreno Valley,29,Full-time,3.3,3.1,0.63,FALSE,57000,54000,TRUE,0.07,FALSE,0,2,0,Not Ready,FALSE,26,5,0.62,0,No,No,1
+EMP089,40,Male,Black,Master,Married,Operations,Operations,Fleet Manager,3,Glendale,72,Full-time,4.1,4.2,0.27,TRUE,88000,82000,TRUE,0.13,TRUE,0.01,5,2,Ready in 1 Year,FALSE,14,3,0.81,0,No,No,1
+EMP090,30,Female,Asian,Bachelor,Single,Customer Service,Operations,Resolution Spec,2,Huntington Beach,24,Full-time,2.8,2.5,0.78,FALSE,44000,42000,FALSE,0,FALSE,0,1,0,Not Ready,FALSE,33,6,0.54,1,Yes,No,1
+EMP091,37,Male,Hispanic,Master,Married,IT,Technology,Solutions Arch,3,Grand Rapids,66,Full-time,4.2,4.3,0.25,TRUE,112000,102000,TRUE,0.16,TRUE,0.02,5,2,Ready Now,TRUE,12,2,0.84,0,No,Yes,1
+EMP092,44,Female,White,Bachelor,Divorced,HR,Corporate,Employee Relations,3,Huntsville,96,Full-time,4,4.1,0.3,TRUE,85000,78000,TRUE,0.12,FALSE,0,5,2,Ready in 1 Year,TRUE,15,3,0.79,0,No,No,1
+EMP093,28,Male,Asian,Bachelor,Single,Sales,Revenue,Retail Sales,1,Akron,17,Full-time,3.2,2.3,0.88,FALSE,38000,36000,TRUE,0.03,FALSE,0,0,0,Not Ready,FALSE,38,7,0.48,1,No,No,1
+EMP094,35,Female,Black,Master,Married,Finance,Corporate,Planning Manager,3,Tallahassee,54,Full-time,3.9,4,0.31,TRUE,90000,83000,TRUE,0.13,TRUE,0.01,4,1,Ready in 1 Year,FALSE,16,3,0.77,0,No,No,1
+EMP095,41,Male,White,PhD,Married,R&D,Innovation,Tech Fellow,4,Grand Prairie,90,Full-time,4.6,4.7,0.13,TRUE,145000,132000,TRUE,0.26,TRUE,0.04,7,3,Ready Now,TRUE,10,2,0.91,0,Yes,No,1
+EMP096,26,Female,Hispanic,Bachelor,Single,Marketing,Revenue,PR Assistant,1,Overland Park,12,Full-time,3.2,2.6,0.8,FALSE,43000,41000,FALSE,0,FALSE,0,0,0,Not Ready,FALSE,34,6,0.53,1,No,Yes,1
+EMP097,39,Male,Asian,Master,Divorced,Operations,Operations,Safety Manager,3,Amarillo,78,Full-time,4,4.1,0.28,TRUE,86000,80000,TRUE,0.12,FALSE,0,5,2,Ready in 1 Year,FALSE,14,3,0.8,0,No,No,1
+EMP098,33,Female,White,Bachelor,Married,IT,Technology,UI/UX Designer,2,Montgomery,42,Full-time,3.6,3.7,0.39,FALSE,70000,65000,TRUE,0.09,FALSE,0,3,1,Ready in 2 Years,FALSE,19,3,0.71,0,No,No,1
+EMP099,31,Male,Black,Bachelor,Single,Customer Service,Operations,Phone Support,1,Shreveport,26,Full-time,2.5,2.2,0.91,FALSE,35000,34000,FALSE,0,FALSE,0,0,0,Not Ready,FALSE,41,7,0.44,0,No,No,1
+EMP100,45,Female,Asian,Master,Married,HR,Corporate,VP HR,5,Augusta,108,Full-time,4.5,4.6,0.15,TRUE,152000,138000,TRUE,0.26,TRUE,0.04,8,3,Ready Now,TRUE,10,2,0.9,0,No,No,1
+EMP101,29,Male,Hispanic,Bachelor,Single,Sales,Revenue,Business Dev,2,Mobile,20,Full-time,3.1,2.8,0.68,FALSE,50000,48000,TRUE,0.06,FALSE,0,1,0,Not Ready,FALSE,28,5,0.6,1,Yes,No,1
+EMP102,38,Female,White,Master,Married,Finance,Corporate,Compliance Mgr,3,Little Rock,72,Full-time,4.1,4.2,0.26,TRUE,92000,85000,TRUE,0.13,TRUE,0.01,5,2,Ready in 1 Year,TRUE,13,3,0.82,0,No,Yes,1
+EMP103,34,Male,Asian,PhD,Married,R&D,Innovation,Algorithm Engineer,3,Knoxville,48,Full-time,4.3,4.4,0.21,TRUE,125000,115000,TRUE,0.2,TRUE,0.03,6,1,Ready Now,TRUE,11,2,0.86,0,No,No,1
+EMP104,27,Female,Black,Bachelor,Single,IT,Technology,Help Desk,1,Fort Wayne,16,Full-time,2.7,2.4,0.82,FALSE,40000,38000,FALSE,0,FALSE,0,0,0,Not Ready,FALSE,35,6,0.51,1,No,No,1
+EMP105,43,Male,White,Master,Divorced,Operations,Operations,VP Operations,5,New Haven,102,Full-time,4.4,4.5,0.18,TRUE,148000,135000,TRUE,0.25,TRUE,0.04,7,3,Ready Now,FALSE,11,2,0.89,0,No,No,1
+EMP106,32,Female,Hispanic,Bachelor,Single,Marketing,Revenue,Growth Hacker,2,Bakersfield,30,Full-time,3.2,2.9,0.64,FALSE,55000,52000,TRUE,0.07,FALSE,0,2,0,Not Ready,FALSE,27,5,0.61,0,No,No,1
+EMP107,40,Male,Asian,Master,Married,HR,Corporate,Workforce Planning,3,Syracuse,84,Full-time,4,4.1,0.29,TRUE,89000,82000,TRUE,0.12,TRUE,0.01,5,2,Ready in 1 Year,TRUE,15,3,0.78,0,Yes,Yes,1
+EMP108,30,Female,White,Bachelor,Single,Customer Service,Operations,Supervisor,2,Savannah,25,Full-time,3.2,2.6,0.75,FALSE,48000,46000,FALSE,0,FALSE,0,1,0,Not Ready,FALSE,32,6,0.56,1,No,No,1
+EMP109,36,Male,Black,Master,Married,Finance,Corporate,FP&A Manager,3,Brownsville,60,Full-time,3.9,4,0.32,TRUE,87000,80000,TRUE,0.12,FALSE,0,4,1,Ready in 1 Year,FALSE,16,3,0.77,0,No,No,1
+EMP110,46,Female,Asian,PhD,Married,R&D,Innovation,Patent Manager,4,Newport News,96,Full-time,4.5,4.6,0.17,TRUE,135000,123000,TRUE,0.22,TRUE,0.03,7,2,Ready Now,TRUE,10,2,0.89,0,No,No,1
+EMP111,28,Male,Hispanic,Bachelor,Single,IT,Technology,Junior Admin,1,Worcester,18,Full-time,2.8,2.5,0.79,FALSE,42000,40000,FALSE,0,FALSE,0,0,0,Not Ready,FALSE,34,6,0.53,1,No,Yes,1
+EMP112,42,Female,White,Master,Married,Operations,Operations,Import/Export Mgr,3,Jackson,90,Full-time,4.1,4.2,0.28,TRUE,91000,84000,TRUE,0.13,TRUE,0.01,5,2,Ready in 1 Year,FALSE,14,3,0.81,0,No,No,1
+EMP113,35,Male,Asian,Bachelor,Married,Sales,Revenue,Key Account Mgr,3,Oceanside,54,Full-time,4,3.6,0.4,FALSE,73000,68000,TRUE,0.09,FALSE,0,3,1,Ready in 2 Years,FALSE,20,4,0.7,1,No,No,1
+EMP114,31,Female,Black,Bachelor,Single,Marketing,Revenue,Influencer Mgr,2,Chattanooga,28,Full-time,3.1,2.8,0.66,FALSE,53000,50000,TRUE,0.06,FALSE,0,1,0,Not Ready,FALSE,29,5,0.58,1,Yes,No,1
+EMP115,47,Male,White,Master,Divorced,HR,Corporate,CHRO,5,Fort Lauderdale,114,Full-time,4.6,4.7,0.12,TRUE,185000,168000,TRUE,0.35,TRUE,0.07,9,4,Ready Now,TRUE,9,2,0.94,0,No,Yes,1
+EMP116,29,Female,Hispanic,Bachelor,Single,Customer Service,Operations,Email Support,1,Providence,21,Full-time,4,2.3,0.84,FALSE,36000,35000,FALSE,0,FALSE,0,0,0,Not Ready,FALSE,37,7,0.49,1,No,No,1
+EMP117,37,Male,Asian,Master,Married,IT,Technology,Platform Engineer,3,Corona,66,Full-time,4.2,4.3,0.24,TRUE,108000,98000,TRUE,0.15,TRUE,0.02,5,2,Ready Now,TRUE,12,2,0.83,0,No,No,1
+EMP118,44,Female,White,Bachelor,Married,Finance,Corporate,Payroll Manager,3,Lancaster,96,Full-time,4,4.1,0.3,TRUE,83000,77000,TRUE,0.11,FALSE,0,5,2,Ready in 1 Year,TRUE,15,3,0.79,0,No,No,1
+EMP119,33,Male,Black,PhD,Married,R&D,Innovation,ML Engineer,3,Palmdale,42,Full-time,4.4,4.5,0.19,TRUE,128000,116000,TRUE,0.2,TRUE,0.03,5,1,Ready Now,TRUE,11,2,0.87,0,No,No,1
+EMP120,26,Female,Asian,Bachelor,Single,Sales,Revenue,Junior Account,1,Columbia,11,Full-time,2.7,2.4,0.83,FALSE,41000,39000,TRUE,0.04,FALSE,0,0,0,Not Ready,FALSE,36,6,0.5,1,Yes,Yes,1
+EMP121,40,Male,Hispanic,Master,Married,Operations,Operations,Vendor Manager,3,Salinas,78,Full-time,4,4.1,0.31,TRUE,85000,79000,TRUE,0.12,FALSE,0,5,2,Ready in 1 Year,FALSE,16,3,0.78,0,No,No,1
+EMP122,34,Female,White,Bachelor,Single,IT,Technology,Scrum Master,2,Peoria,36,Full-time,3.5,3.6,0.43,FALSE,67000,62000,TRUE,0.08,FALSE,0,3,1,Ready in 2 Years,FALSE,21,4,0.68,0,No,No,1
+EMP123,38,Male,Asian,Master,Divorced,HR,Corporate,Culture Manager,3,Rockford,72,Full-time,3.9,4,0.34,TRUE,81000,75000,TRUE,0.11,FALSE,0,4,1,Ready in 1 Year,TRUE,17,3,0.76,0,No,Yes,1
+EMP124,30,Female,Black,Bachelor,Single,Marketing,Revenue,Community Mgr,2,Pasadena,26,Full-time,3,2.7,0.73,FALSE,52000,49000,TRUE,0.06,FALSE,0,1,0,Not Ready,FALSE,30,5,0.57,1,No,No,1
+EMP125,48,Male,White,PhD,Married,R&D,Innovation,SVP Innovation,5,Sunnyvale,120,Full-time,4.8,4.9,0.08,TRUE,195000,175000,TRUE,0.38,TRUE,0.08,10,4,Ready Now,TRUE,7,2,0.96,0,No,No,1
+EMP126,27,Female,Hispanic,Bachelor,Single,Customer Service,Operations,Service Analyst,1,Pomona,19,Full-time,2.5,2.2,0.89,FALSE,37000,36000,FALSE,0,FALSE,0,0,0,Not Ready,FALSE,40,7,0.46,1,No,No,1

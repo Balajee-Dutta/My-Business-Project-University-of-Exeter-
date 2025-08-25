@@ -1,0 +1,39 @@
+job_id,resume_id,overlap,human_rank,match_type
+JOB-001,RES-001,6,1,Perfect - Senior SW Engineer
+JOB-002,RES-002,5,1,Perfect - ML Engineer
+JOB-003,RES-003,7,1,Perfect - Data Engineer
+JOB-004,RES-004,6,1,Perfect - Staff DevOps
+JOB-005,RES-005,5,1,Perfect - Java Engineer
+JOB-006,RES-006,6,1,Perfect - Frontend Engineer
+JOB-011,RES-013,5,1,Perfect - Enterprise Sales
+JOB-016,RES-019,6,1,Perfect - Senior PM
+JOB-018,RES-020,6,1,Perfect - Senior UX
+JOB-020,RES-024,5,1,Perfect - Customer Success
+JOB-012,RES-014,6,1,Perfect - Sales Manager
+JOB-008,RES-011,4,2,Good - Junior to Junior
+JOB-007,RES-007,5,2,Good - QA Engineer
+JOB-009,RES-008,4,2,Good - Systems Engineer
+JOB-013,RES-015,4,2,Good - Account Executive
+JOB-017,RES-021,5,2,Good - Product Manager
+JOB-019,RES-023,5,2,Good - Product Analyst
+JOB-024,RES-027,5,2,Good - Finance Analyst
+JOB-027,RES-029,4,2,Good - Marketing Analyst
+JOB-010,RES-004,5,2,Internal Move - Senior to Mid DevOps
+JOB-025,RES-028,4,2,Good - Finance progression
+JOB-026,RES-029,5,2,Good - Marketing role match
+JOB-008,RES-001,3,3,Overqualified - Senior for Junior
+JOB-015,RES-013,2,3,Overqualified - Executive for SDR
+JOB-022,RES-024,3,3,Overqualified - Manager for Support
+JOB-030,RES-030,4,3,Overqualified - 6yr for Coordinator
+JOB-019,RES-009,4,3,Transferable - Data Eng to Product
+JOB-021,RES-017,3,3,Transferable - Sales to Customer Success
+JOB-001,RES-011,2,4,Underqualified - Junior for Senior
+JOB-004,RES-010,3,4,Underqualified - 3yr for Staff
+JOB-011,RES-018,1,4,Underqualified - SDR for Enterprise
+JOB-016,RES-023,2,4,Underqualified - Analyst for Senior PM
+JOB-023,RES-027,3,4,Underqualified - 5yr for Manager
+JOB-001,RES-013,0,4,Mismatch - Sales for Engineering
+JOB-011,RES-001,0,4,Mismatch - Engineer for Sales
+JOB-024,RES-020,1,4,Mismatch - Designer for Finance
+JOB-018,RES-027,1,4,Mismatch - Finance for UX
+JOB-029,RES-002,0,4,Mismatch - ML Engineer for HR

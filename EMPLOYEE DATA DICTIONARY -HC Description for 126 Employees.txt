@@ -1,0 +1,113 @@
+EMPLOYEE DATA DICTIONARY - HR Intelligence Platform
+
+EMPLOYEE IDENTIFIERS
+=====================
+emp_id: Unique employee identifier (EMP001-EMP125)
+age: Employee age in years (22-50)
+gender: Employee gender (Male/Female)
+ethnicity: Employee ethnicity (Asian/Black/Hispanic/White)
+education_level: Highest education achieved (Bachelor's/Master's/MBA)
+marital_status: Current marital status (Single/Married)
+
+ORGANIZATIONAL STRUCTURE
+========================
+department: Primary department (Engineering/Sales/HR/Customer Service/Finance/Marketing/IT/Operations)
+business_unit: Business division (Technology/Commercial/Corporate/Operations)
+job_title: Current position title
+job_level: Hierarchical level (1=Entry, 2=Individual Contributor, 3=Senior/Lead, 4=Manager, 5=Director, 6=VP, 7=C-Suite)
+location: Primary work location (Major US cities)
+employment_type: Employment classification (Full-time/Part-time/Contract)
+
+TENURE & EXPERIENCE
+===================
+tenure_months: Months with company (0-180)
+- 0-6: Probation period
+- 6-12: Early tenure
+- 12-24: Establishing
+- 24-60: Experienced
+- 60+: Long-tenured
+
+PERFORMANCE METRICS
+===================
+performance_rating: Annual performance score (1.0-5.0)
+- 1.0-2.5: Needs Improvement
+- 2.6-3.5: Meets Expectations
+- 3.6-4.5: Exceeds Expectations
+- 4.6-5.0: Outstanding
+
+engagement_score: Employee engagement level (1.0-5.0)
+- 1.0-2.5: Disengaged
+- 2.6-3.5: Somewhat Engaged
+- 3.6-4.5: Engaged
+- 4.6-5.0: Highly Engaged
+
+RISK & POTENTIAL
+================
+risk_of_exit_score: Attrition risk probability (0.0-1.0)
+- 0.0-0.3: Low Risk
+- 0.3-0.5: Moderate Risk
+- 0.5-0.7: Elevated Risk
+- 0.7-1.0: High Risk
+
+high_potential_flag: Identified as high potential (True/False)
+
+COMPENSATION
+============
+current_salary: Total current salary in USD
+base_salary: Base salary component in USD
+bonus_eligible: Eligible for bonus (True/False)
+bonus_pct: Target bonus percentage (0.00-0.35)
+equity_grant: Has equity compensation (True/False)
+equity_pct: Equity percentage (0.00-0.20)
+
+DEVELOPMENT & SUCCESSION
+========================
+training_count: Number of training programs completed (0-20)
+promotion_count: Number of promotions received (0-7)
+succession_plan_status: Succession readiness
+- Ready: Can assume higher role immediately
+- Developing: 6-12 months from ready
+- Not Ready: 12+ months or not identified
+
+aihr_certified: Has AIHR certification (True/False)
+
+LEAVE & ATTENDANCE
+==================
+leave_days_24m: Total leave days in last 24 months (0-40)
+leave_events_24m: Number of leave events in last 24 months (0-8)
+approval_ratio: Manager approval rate for requests (0.0-1.0)
+
+EMPLOYMENT STATUS
+=================
+attrition_flag: Employee left company (0=Active, 1=Left)
+veteran_status: Military veteran (True/False)
+disability_status: Has disclosed disability (True/False)
+fte: Full-time equivalent (0.5/0.8/1.0)
+
+KEY BUSINESS PATTERNS IN DATA
+==============================
+1. ATTRITION DRIVERS (attrition_flag = 1):
+   - Low engagement (<3.0) + High risk (>0.7) = 95% attrition
+   - New hires (<6 months) with no training = 90% attrition
+   - High performers (>4.0) with no promotions = 85% attrition
+   - Low approval ratio (<0.4) = Strong predictor
+
+2. RETENTION INDICATORS (attrition_flag = 0):
+   - High engagement (>4.5) + Recent promotion = 95% retention
+   - Long tenure (>60 months) + High performance = 90% retention
+   - Succession ready status = Strong retention
+
+3. DEPARTMENT PATTERNS:
+   - Sales/Customer Service: Higher turnover (40-50%)
+   - Engineering/Finance: Lower turnover (20-25%)
+   - Early tenure risk highest in first year
+
+4. COMPENSATION INSIGHTS:
+   - Equity grants strongly correlate with retention
+   - Bonus eligibility less predictive than actual bonus %
+   - Salary compression visible at 3-5 year tenure mark
+
+5. CRITICAL FLAGS:
+   - Risk > 0.85 + Engagement < 2.5 = Immediate attention needed
+   - High potential + High risk = Priority retention case
+   - Recent promotion + Low engagement = Early warning sign
