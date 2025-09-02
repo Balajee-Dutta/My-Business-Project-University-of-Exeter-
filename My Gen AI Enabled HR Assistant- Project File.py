@@ -89,7 +89,7 @@ st.caption("Real-time People Analytics • Predictive Insights • Strategic Rec
 @st.cache_resource
 def init_openai_client():
     """Initialize OpenAI client with error handling"""
-    api_key = "[Insert API Key here]"
+    api_key = "[Insert API Key Here]"
     return OpenAI(api_key=api_key)
 
 # Initialize client
@@ -1650,26 +1650,214 @@ with tab5:
                             st.metric("Avg Increase", f"${np.mean(list(adjustments.values())):,.0f}")
                             st.metric("ROI (Retention Value)", f"{len(below_median) * 50000:,.0f}")
                     
+                    elif adjustment_type == "Market Alignment":
+                        # Align salaries to market percentiles
+                        st.markdown("#### Market Percentile Targeting")
+                        
+                        target_percentile = st.slider("Target Market Percentile", 25, 75, 50, 5)
+                        
+                        # Calculate current percentiles by job level
+                        market_gaps = []
+                        
+                        for level in hr_df['job_level'].unique():
+                            level_df = hr_df[(hr_df['job_level'] == level) & (hr_df['attrition_flag'] == 0)].copy()
+                            if len(level_df) >= 3:  # Need minimum employees for percentile calc
+                                current_median = level_df['current_salary'].median()
+                                target_salary = level_df['current_salary'].quantile(target_percentile / 100)
+                                
+                                # Find employees below target percentile
+                                below_target = level_df[level_df['current_salary'] < target_salary].copy()
+                                if len(below_target) > 0:
+                                    below_target['gap_to_target'] = target_salary - below_target['current_salary']
+                                    below_target['level'] = level
+                                    market_gaps.append(below_target[['emp_id', 'current_salary', 'gap_to_target', 'level', 'performance_rating']])
+                        
+                        if market_gaps:
+                            all_gaps = pd.concat(market_gaps, ignore_index=True)
+                            all_gaps = all_gaps.sort_values('gap_to_target', ascending=False)
+                            
+                            total_gap = all_gaps['gap_to_target'].sum()
+                            
+                            if total_gap <= budget:
+                                st.success(f"✅ Full market alignment achievable within budget!")
+                                employees_adjusted = len(all_gaps)
+                                avg_adjustment = all_gaps['gap_to_target'].mean()
+                                
+                                # Show distribution by level
+                                level_summary = all_gaps.groupby('level')['gap_to_target'].agg(['count', 'mean', 'sum'])
+                                st.dataframe(level_summary, use_container_width=True)
+                            else:
+                                # Prioritize by performance and gap size
+                                all_gaps['priority_score'] = (
+                                    all_gaps['performance_rating'] / 5 * 0.4 +
+                                    (all_gaps['gap_to_target'] / all_gaps['gap_to_target'].max()) * 0.6
+                                )
+                                all_gaps = all_gaps.sort_values('priority_score', ascending=False)
+                                
+                                # Allocate budget to highest priority
+                                cumsum = all_gaps['gap_to_target'].cumsum()
+                                affordable = all_gaps[cumsum <= budget]
+                                employees_adjusted = len(affordable)
+                                avg_adjustment = affordable['gap_to_target'].mean() if len(affordable) > 0 else 0
+                                
+                                remaining_gap = total_gap - budget
+                                st.warning(f"⚠️ Partial alignment: ${remaining_gap:,.0f} additional budget needed for full alignment")
+                                
+                                # Show who gets adjusted
+                                st.markdown("**Employees Receiving Adjustment (Priority Order):**")
+                                display_df = affordable[['level', 'gap_to_target', 'performance_rating']].head(10)
+                                display_df['gap_to_target'] = display_df['gap_to_target'].apply(lambda x: f"${x:,.0f}")
+                                st.dataframe(display_df, use_container_width=True)
+                            
+                            st.metric("Employees Aligned", employees_adjusted)
+                            st.metric("Avg Market Adjustment", f"${avg_adjustment:,.0f}")
+                            st.metric("Market Competitiveness", f"{target_percentile}th percentile")
+                        else:
+                            st.info("All employees already at or above target market percentile")
+                    
                     elif adjustment_type == "Retention Critical":
-                        # Focus on high risk + high value
-                        critical = hr_df[(hr_df['risk_of_exit_score'] > 0.7) & 
-                                        (hr_df['performance_rating'] >= 3.5) &
-                                        (hr_df['attrition_flag'] == 0)].copy()
+                        # Advanced retention critical optimizer
+                        st.markdown("#### Retention Risk Optimizer")
+                        
+                        # Define criticality factors
+                        col1, col2 = st.columns(2)
+                        with col1:
+                            min_perf = st.slider("Min Performance Rating", 
+                                               min_value=1.0,
+                                               max_value=5.0,
+                                               value=3.5,
+                                               step=0.1)
+                            risk_threshold = st.slider("Risk Threshold",
+                                                      min_value=0.0,
+                                                      max_value=1.0,
+                                                      value=0.5,
+                                                      step=0.05)
+                        with col2:
+                            include_high_potential = st.checkbox("Prioritize High Potential", value=True)
+                            include_key_roles = st.checkbox("Include Key Roles (L4+)", value=True)
+                        
+                        # Start with base filtering
+                        critical = hr_df[
+                            (hr_df['attrition_flag'] == 0) &
+                            (hr_df['performance_rating'] >= min_perf) &
+                            (hr_df['risk_of_exit_score'] >= risk_threshold)
+                        ].copy(deep=True)
+                        
+                        # Apply optional filters only if candidates exist
+                        if len(critical) > 0:
+                            if include_high_potential and 'high_potential_flag' in hr_df.columns:
+                                # Filter for high potential only if checkbox is checked
+                                high_pot_candidates = critical[critical['high_potential_flag'] == 1]
+                                if len(high_pot_candidates) > 0:
+                                    critical = high_pot_candidates
+                            
+                            if include_key_roles:
+                                # Handle both numeric and string job levels
+                                key_candidates = critical[
+                                    (critical['job_level'].astype(str).isin(['4', '5', '6', 'L4', 'L5', 'L6'])) |
+                                    (critical['job_level'].isin([4, 5, 6]))
+                                ]
+                                if len(key_candidates) > 0:
+                                    critical = key_candidates
                         
                         if len(critical) > 0:
-                            # 15% increase for critical employees
-                            critical['suggested_increase'] = critical['current_salary'] * 0.15
-                            total_cost = critical['suggested_increase'].sum()
+                            # Calculate retention value for each employee
+                            critical['replacement_cost'] = critical['current_salary'] * 1.5  # 150% replacement cost
+                            critical['productivity_loss'] = critical['current_salary'] * 0.5  # 6 months productivity
+                            critical['knowledge_loss'] = critical.apply(
+                                lambda x: x['current_salary'] * 0.3 if x['tenure_months'] > 36 else x['current_salary'] * 0.1, 
+                                axis=1
+                            )
+                            critical['total_loss_if_exits'] = (
+                                critical['replacement_cost'] + 
+                                critical['productivity_loss'] + 
+                                critical['knowledge_loss']
+                            )
                             
-                            if total_cost <= budget:
-                                st.success(f"✅ All {len(critical)} critical employees covered!")
+                            # Calculate optimal retention bonus
+                            critical['retention_bonus'] = critical.apply(
+                                lambda x: min(
+                                    x['current_salary'] * 0.20,  # Cap at 20%
+                                    x['total_loss_if_exits'] * 0.3  # Or 30% of potential loss
+                                ),
+                                axis=1
+                            )
+                            critical.loc[:, 'roi'] = (critical['total_loss_if_exits'] - critical['retention_bonus']) / critical['retention_bonus']
+                            critical.loc[:, 'priority_score'] = critical['roi'] * critical['risk_of_exit_score']
+                            # Calculate ROI for each retention
+                            critical['roi'] = (critical['total_loss_if_exits'] - critical['retention_bonus']) / critical['retention_bonus']
+                            
+                            # Sort by ROI and risk combined
+                            critical['priority_score'] = critical['roi'] * critical['risk_of_exit_score']
+                            critical = critical.sort_values('priority_score', ascending=False)
+                            
+                            # Optimize budget allocation
+                            total_retention_cost = critical['retention_bonus'].sum()
+                            
+                            if total_retention_cost <= budget:
+                                st.success(f"✅ All {len(critical)} critical employees can be retained within budget!")
+                                selected = critical
                             else:
-                                covered = int(budget / (total_cost / len(critical)))
-                                st.warning(f"⚠️ Budget covers {covered} of {len(critical)} employees")
+                                # Greedy optimization: select highest ROI until budget exhausted
+                                critical['cumsum_cost'] = critical['retention_bonus'].cumsum()
+                                selected = critical[critical['cumsum_cost'] <= budget]
+                                
+                                if len(selected) < len(critical):
+                                    st.warning(f"⚠️ Budget covers {len(selected)} of {len(critical)} critical employees")
+                                    not_covered = len(critical) - len(selected)
+                                    additional_needed = total_retention_cost - budget
+                                    st.error(f"💰 ${additional_needed:,.0f} additional budget needed to retain all {not_covered} remaining critical employees")
                             
-                            st.metric("Critical Employees", len(critical))
-                            st.metric("Avg Retention Bonus", f"${critical['suggested_increase'].mean():,.0f}")
-                            st.metric("Expected Retention Rate", "85%+")
+                            # Display results
+                            col1, col2, col3 = st.columns(3)
+                            col1.metric("Employees Retained", len(selected) if 'selected' in locals() else len(critical))
+                            col2.metric("Total Investment", f"${(selected if 'selected' in locals() else critical)['retention_bonus'].sum():,.0f}")
+                            col3.metric("Value Protected", f"${(selected if 'selected' in locals() else critical)['total_loss_if_exits'].sum():,.0f}")
+                            
+                            # ROI Analysis
+                            final_selection = selected if 'selected' in locals() else critical
+                            total_roi = (final_selection['total_loss_if_exits'].sum() - final_selection['retention_bonus'].sum()) / max(final_selection['retention_bonus'].sum(), 1)
+                            st.metric("Program ROI", f"{total_roi:.1f}x", "Excellent" if total_roi > 3 else "Good" if total_roi > 2 else "Moderate")
+                            
+                            # Show top retention targets
+                            st.markdown("### 🎯 Top Retention Targets")
+                            display_cols = ['emp_id', 'department', 'job_level', 'risk_of_exit_score', 
+                                          'retention_bonus', 'total_loss_if_exits', 'roi']
+                            display_df = final_selection[display_cols].head(10).copy()
+                            display_df['retention_bonus'] = display_df['retention_bonus'].apply(lambda x: f"${x:,.0f}")
+                            display_df['total_loss_if_exits'] = display_df['total_loss_if_exits'].apply(lambda x: f"${x:,.0f}")
+                            display_df['roi'] = display_df['roi'].apply(lambda x: f"{x:.1f}x")
+                            display_df['risk_of_exit_score'] = display_df['risk_of_exit_score'].apply(lambda x: f"{x:.1%}")
+                            
+                            st.dataframe(display_df, use_container_width=True)
+                            
+                            # Department impact
+                            dept_summary = final_selection.groupby('department').agg({
+                                'emp_id': 'count',
+                                'retention_bonus': 'sum'
+                            }).rename(columns={'emp_id': 'employees', 'retention_bonus': 'investment'})
+                            
+                            st.markdown("### 🏢 Department Investment Distribution")
+                            fig_dept = px.bar(
+                                dept_summary.reset_index(),
+                                x='department',
+                                y='investment',
+                                title='Retention Investment by Department',
+                                labels={'investment': 'Total Investment ($)'},
+                                color='investment',
+                                color_continuous_scale='Blues'
+                            )
+                            st.plotly_chart(fig_dept, use_container_width=True)
+                        else:
+                            st.info(f"""
+                            No employees meet the current criteria:
+                            - Min Performance: {min_perf}
+                            - Risk Threshold: {risk_threshold}
+                            - High Potential Filter: {include_high_potential}
+                            - Key Roles Filter: {include_key_roles}
+                            
+                            Try adjusting the filters to identify at-risk employees.
+                            """)
         
         elif scenario == "Performance Improvement":
             st.markdown("### 📈 Performance Enhancement Simulator")
@@ -1696,6 +1884,248 @@ with tab5:
                 4. **Tools & Resources**: Invest in productivity enablers
                 5. **Clear Goals**: Establish SMART objectives with regular check-ins
                 """)
+        
+        elif scenario == "Succession Planning":
+            st.markdown("### 👥 Succession Planning Analysis")
+            
+            col1, col2 = st.columns(2)
+            with col1:
+                # Fix job_level handling - ensure it's string format
+                job_levels = hr_df['job_level'].unique().tolist()
+                # Convert to string and ensure proper format
+                formatted_levels = []
+                for level in job_levels:
+                    if isinstance(level, (int, float)):
+                        formatted_levels.append(f"L{int(level)}")
+                    elif str(level).startswith('L'):
+                        formatted_levels.append(str(level))
+                    else:
+                        formatted_levels.append(f"L{level}")
+                
+                formatted_levels = sorted(set(formatted_levels), 
+                                        key=lambda x: int(x.replace('L', '')) if x.replace('L', '').isdigit() else 0, 
+                                        reverse=True)
+                
+                critical_role = st.selectbox("Critical Role Level", formatted_levels)
+                planning_horizon = st.selectbox("Planning Horizon", 
+                    ["6 months", "1 year", "2 years", "3+ years"])
+            
+            with col2:
+                min_performance = st.slider("Min Performance Rating", 
+                                          min_value=1.0, 
+                                          max_value=5.0, 
+                                          value=3.5, 
+                                          step=0.1)
+                include_external = st.checkbox("Include External Pipeline", value=False)
+            
+            if st.button("Analyze Succession Pipeline", type="primary"):
+                with st.spinner("Analyzing succession readiness..."):
+                    # Extract numeric level for comparison
+                    critical_level_num = int(critical_role.replace('L', '')) if critical_role.replace('L', '').isdigit() else 5
+                    
+                    # Get current role holders - handle both formats
+                    current_holders = hr_df[
+                        ((hr_df['job_level'] == critical_level_num) |
+                         (hr_df['job_level'] == str(critical_level_num)) |
+                         (hr_df['job_level'] == critical_role)) &
+                        (hr_df['attrition_flag'] == 0)
+                    ]
+                    
+                    # Identify potential successors (one level below)
+                    if critical_level_num > 1:
+                        successor_level_num = critical_level_num - 1
+                        potential_successors = hr_df[
+                            ((hr_df['job_level'] == successor_level_num) |
+                             (hr_df['job_level'] == str(successor_level_num)) |
+                             (hr_df['job_level'] == f"L{successor_level_num}")) &
+                            (hr_df['performance_rating'] >= min_performance) &
+                            (hr_df['attrition_flag'] == 0)
+                        ].copy()
+                    else:
+                        potential_successors = hr_df[
+                            ((hr_df['job_level'] == critical_level_num) |
+                             (hr_df['job_level'] == str(critical_level_num)) |
+                             (hr_df['job_level'] == critical_role)) &
+                            (hr_df['performance_rating'] >= min_performance) &
+                            (hr_df['attrition_flag'] == 0)
+                        ].copy()
+                    
+                    # Calculate successor readiness scores
+                    if len(potential_successors) > 0:
+                        # Readiness score based on multiple factors
+                        potential_successors['readiness_score'] = (
+                            potential_successors['performance_rating'] * 0.3 +
+                            potential_successors['engagement_score'] * 0.2 +
+                            (5 - potential_successors['risk_of_exit_score'] * 5) * 0.2 +
+                            np.minimum(potential_successors['tenure_months'] / 60, 1) * 5 * 0.3
+                        )
+                        
+                        # Categorize readiness
+                        def categorize_readiness(score, tenure):
+                            if score >= 4.5 and tenure >= 24:
+                                return "Ready Now"
+                            elif score >= 4.0 and tenure >= 12:
+                                return "Ready 6-12 months"
+                            elif score >= 3.5:
+                                return "Ready 1-2 years"
+                            else:
+                                return "Development Needed"
+                        
+                        potential_successors['readiness_category'] = potential_successors.apply(
+                            lambda x: categorize_readiness(x['readiness_score'], x['tenure_months']), axis=1
+                        )
+                        
+                        # Calculate bench strength
+                        ready_now = len(potential_successors[potential_successors['readiness_category'] == "Ready Now"])
+                        ready_soon = len(potential_successors[potential_successors['readiness_category'].str.contains("Ready")])
+                        bench_strength = ready_now / max(len(current_holders), 1)
+                        
+                        # Display metrics
+                        col1, col2, col3, col4 = st.columns(4)
+                        col1.metric("Current Role Holders", len(current_holders))
+                        col2.metric("Potential Successors", len(potential_successors))
+                        col3.metric("Ready Now", ready_now, 
+                                   "Strong" if ready_now >= len(current_holders) else "Weak")
+                        col4.metric("Bench Strength", f"{bench_strength:.1%}",
+                                   "Healthy" if bench_strength >= 1.0 else "At Risk")
+                        
+                        # Create 9-box grid for succession planning
+                        st.markdown("### 📊 Succession 9-Box Grid")
+                        
+                        # Calculate potential (based on age, education, tenure growth)
+                        potential_successors['potential'] = (
+                            (50 - potential_successors['age'].clip(25, 50)) / 25 * 3 +  # Younger = higher potential
+                            potential_successors['engagement_score'] * 0.4 +
+                            np.minimum(potential_successors['training_count'] / 10, 1) * 2
+                        )
+                        
+                        # Create 9-box categories
+                        def get_box_category(perf, pot):
+                            if perf >= 4.5:
+                                if pot >= 4.0:
+                                    return "Star", "#009E73"
+                                elif pot >= 3.0:
+                                    return "High Performer", "#56B4E9"
+                                else:
+                                    return "Effective", "#0072B2"
+                            elif perf >= 3.5:
+                                if pot >= 4.0:
+                                    return "High Potential", "#F0E442"
+                                elif pot >= 3.0:
+                                    return "Core Performer", "#999999"
+                                else:
+                                    return "Solid Performer", "#CC79A7"
+                            else:
+                                if pot >= 4.0:
+                                    return "Rough Diamond", "#E69F00"
+                                elif pot >= 3.0:
+                                    return "Inconsistent", "#D55E00"
+                                else:
+                                    return "Needs Development", "#000000"
+                        
+                        potential_successors['box_category'], potential_successors['box_color'] = zip(*potential_successors.apply(
+                            lambda x: get_box_category(x['performance_rating'], x['potential']), axis=1
+                        ))
+                        
+                        # Create scatter plot for 9-box
+                        fig_9box = px.scatter(
+                            potential_successors,
+                            x='performance_rating',
+                            y='potential',
+                            color='box_category',
+                            size='readiness_score',
+                            hover_data=['emp_id', 'department', 'tenure_months', 'readiness_category'],
+                            title='Succession Planning 9-Box Grid',
+                            labels={'performance_rating': 'Current Performance', 'potential': 'Future Potential'},
+                            color_discrete_map={
+                                "Star": "#009E73",
+                                "High Performer": "#56B4E9",
+                                "Effective": "#0072B2",
+                                "High Potential": "#F0E442",
+                                "Core Performer": "#999999",
+                                "Solid Performer": "#CC79A7",
+                                "Rough Diamond": "#E69F00",
+                                "Inconsistent": "#D55E00",
+                                "Needs Development": "#000000"
+                            }
+                        )
+                        
+                        # Add grid lines
+                        fig_9box.add_hline(y=3.0, line_dash="dash", line_color="gray", opacity=0.5)
+                        fig_9box.add_hline(y=4.0, line_dash="dash", line_color="gray", opacity=0.5)
+                        fig_9box.add_vline(x=3.5, line_dash="dash", line_color="gray", opacity=0.5)
+                        fig_9box.add_vline(x=4.5, line_dash="dash", line_color="gray", opacity=0.5)
+                        
+                        fig_9box.update_layout(
+                            xaxis_range=[2.5, 5.5],
+                            yaxis_range=[2.0, 5.5],
+                            height=500
+                        )
+                        
+                        st.plotly_chart(fig_9box, use_container_width=True)
+                        
+                        # Readiness timeline
+                        st.markdown("### 📅 Succession Readiness Timeline")
+                        readiness_summary = potential_successors['readiness_category'].value_counts()
+                        
+                        fig_timeline = px.bar(
+                            x=readiness_summary.values,
+                            y=readiness_summary.index,
+                            orientation='h',
+                            title='Successor Readiness Distribution',
+                            labels={'x': 'Number of Candidates', 'y': 'Readiness Timeline'},
+                            color=readiness_summary.index,
+                            color_discrete_map={
+                                "Ready Now": "#009E73",
+                                "Ready 6-12 months": "#56B4E9",
+                                "Ready 1-2 years": "#F0E442",
+                                "Development Needed": "#D55E00"
+                            }
+                        )
+                        st.plotly_chart(fig_timeline, use_container_width=True)
+                        
+                        # Top succession candidates
+                        st.markdown("### 🎯 Top Succession Candidates")
+                        top_candidates = potential_successors.nlargest(5, 'readiness_score')[
+                            ['emp_id', 'department', 'performance_rating', 'readiness_score', 
+                             'readiness_category', 'box_category']
+                        ]
+                        st.dataframe(top_candidates, use_container_width=True)
+                        
+                        # Recommendations
+                        st.markdown("### 💡 Strategic Recommendations")
+                        
+                        if bench_strength < 1.0:
+                            st.warning(f"""
+                            ⚠️ **Succession Risk Identified**
+                            - Current bench strength: {bench_strength:.1%}
+                            - Gap: {len(current_holders) - ready_now} additional ready candidates needed
+                            - Recommended actions:
+                              1. Accelerate development for {len(potential_successors[potential_successors['readiness_category'] == "Ready 6-12 months"])} near-ready candidates
+                              2. Consider external talent pipeline for critical gaps
+                              3. Implement retention program for {ready_now} ready candidates
+                            """)
+                        else:
+                            st.success(f"""
+                            ✅ **Healthy Succession Pipeline**
+                            - Bench strength: {bench_strength:.1%}
+                            - {ready_now} candidates ready for immediate promotion
+                            - Continue development programs to maintain pipeline
+                            """)
+                        
+                        # Development priorities
+                        development_needed = potential_successors[potential_successors['readiness_category'] == "Development Needed"]
+                        if len(development_needed) > 0:
+                            st.info(f"""
+                            📚 **Development Priorities**
+                            - {len(development_needed)} candidates need accelerated development
+                            - Focus areas:
+                              • Leadership training for high-potential candidates
+                              • Cross-functional exposure for depth
+                              • Mentorship with current {critical_role} holders
+                            """)
+                    else:
+                        st.error(f"No potential successors found for {critical_role} with performance >= {min_performance}")
     else:
         st.info("👈 Please upload Employee Data to run what-if scenarios")
 
