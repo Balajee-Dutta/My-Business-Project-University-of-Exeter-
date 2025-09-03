@@ -1,0 +1,44 @@
+Gen AI Enabled HR Assistant
+A Streamlit-based HR assistant application powered by generative AI capabilities.
+Prerequisites
+
+Python 3.7 or higher
+Streamlit
+Required Python dependencies (see requirements.txt if available)
+API key for AI features
+
+Installation
+
+Clone or download this repository
+Navigate to the project directory
+Install required dependencies:
+bashpip install streamlit
+
+
+Running the Application
+
+Open the Python file: Locate the file named My Gen AI Enabled HR Assistant- Project File.py
+Navigate to the project directory in your terminal/command prompt
+Run the application using Streamlit:
+Go to terminal and copy paste the below-
+
+streamlit run "My Gen AI Enabled HR Assistant- Project File.py"
+
+Access the application: Once running, Streamlit will provide a local URL (typically http://localhost:8501) where you can access the HR assistant interface
+
+Important Notes
+⚠️ API Key Required: AI features will not function without a valid API key. Make sure to configure your API key before using AI-enabled features.
+⚠️ Warnings: You may see some warnings during startup - these can generally be ignored as long as the application runs successfully.
+Configuration
+
+Ensure your API key is properly configured in the application settings or environment variables
+Check that all required dependencies are installed before running
+
+Troubleshooting
+
+If you encounter import errors, install missing packages using pip install [package-name]
+Verify that your Python environment has all necessary dependencies
+Ensure the file path is correct when running the streamlit command
+
+Support
+For issues or questions regarding the HR Assistant application, please refer to the project documentation or contact the development team.
